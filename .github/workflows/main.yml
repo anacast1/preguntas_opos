@@ -2,7 +2,6 @@ name: preguntas-ultra-dios
 
 on:
   schedule:
-    - cron: "0 */2 * * *"   # cada 2 horas
   workflow_dispatch:
 
 jobs:
