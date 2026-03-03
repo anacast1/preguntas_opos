@@ -6,11 +6,14 @@ CHAT_ID = os.getenv("CHAT_ID")
 if not TELEGRAM_TOKEN or not CHAT_ID:
     raise ValueError("No se encontró TELEGRAM_TOKEN o CHAT_ID")
 
-# Cargar preguntas pre-generadas
+# Leer preguntas.json
+if not os.path.exists("preguntas.json"):
+    raise FileNotFoundError("preguntas.json no encontrado. Ejecuta generar_preguntas.py primero.")
+
 with open("preguntas.json", "r", encoding="utf-8") as f:
     preguntas = json.load(f)
 
-# Elegir un tema y pregunta aleatoria
+# Elegir pregunta aleatoria
 tema = random.choice(list(preguntas.keys()))
 pregunta = random.choice(preguntas[tema])
 
