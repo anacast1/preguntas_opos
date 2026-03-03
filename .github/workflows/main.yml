@@ -1,8 +1,8 @@
 name: preguntas-ultra-dios
 
+# Solo ejecución manual
 on:
-  schedule:
-  workflow_dispatch:
+  workflow_dispatch:  # permite ejecutar manualmente desde Actions
 
 jobs:
   run:
