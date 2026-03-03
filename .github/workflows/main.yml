@@ -1,8 +1,7 @@
-name: preguntas-ultra-dios
+name: enviar-preguntas-json
 
-# Solo ejecución manual
 on:
-  workflow_dispatch:  # permite ejecutar manualmente desde Actions
+  workflow_dispatch:
 
 jobs:
   run:
@@ -12,10 +11,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install -r requirements.txt
-      - name: Ejecutar sender
+      - run: pip install requests
+      - name: Enviar pregunta
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python sender.py
