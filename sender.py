@@ -8,7 +8,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 TEMAS_FILE = "temas.json"
-HISTORIAL_FILE = "preguntas_recientes.txt"
+HISTORIAL_FILE = "preguntas_recientes.txt
 
 # -----------------------
 # Cargar historial
