@@ -6,6 +6,9 @@ TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
+if not OPENAI_API_KEY:
+    raise ValueError("No se encontró OPENAI_API_KEY en el entorno")
+    
 client = OpenAI(api_key=OPENAI_API_KEY)
 HISTORIAL_FILE = "preguntas_recientes.txt"
 
